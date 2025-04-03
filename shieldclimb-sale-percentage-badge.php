@@ -4,7 +4,7 @@
  * Plugin Name: ShieldClimb – Sale Percentage Badge for WooCommerce
  * Plugin URI: https://shieldclimb.com/free-woocommerce-plugins/sale-percentage-badge/
  * Description: Add sale percentage badges to your WooCommerce store. Increase sales and conversions by showcasing clear discount percentages on products.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires Plugins: woocommerce
  * Requires at least: 5.8
  * Tested up to: 6.7
@@ -72,7 +72,12 @@ function shieldclimb_sale_percentage_badge( $html, $post, $product ) {
           return $html;
       }
   }
-  return '<span class="onsale">' . esc_html__( 'SALE', 'woocommerce' ) . ' ' . $percentage . '</span>';
+  return '<span class="onsale">' . esc_html__( 'SALE', 'shieldclimb-sale-percentage-badge' ) . ' ' . $percentage . '</span>';
 }
+
+function shieldclimb_sale_badge_load_textdomain() {
+    load_plugin_textdomain( 'shieldclimb-sale-percentage-badge', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+}
+add_action( 'plugins_loaded', 'shieldclimb_sale_badge_load_textdomain' );
 
 ?>

@@ -40,6 +40,9 @@ ShieldClimb's **[Sale Percentage Badge](https://shieldclimb.com/free-woocommerce
 
 ## 📜 Changelog
 
+### v1.0.1
+- Fix text domain mismatch and add text domain loading function
+
 ### v1.0.0
 - Initial release
 
